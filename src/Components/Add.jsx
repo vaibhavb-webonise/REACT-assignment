@@ -1,22 +1,23 @@
-import React, { useContext, useState } from "react";
-import { useHistory } from "react-router";
-import { usersContext } from "../App";
-import { validation } from "../Validation";
-import "../Styles/Add.css";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from 'react';
+import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
+
+import { usersContext } from '../App';
+import { validation } from '../Validation';
+import '../Styles/Add.css';
+
 function Add() {
   const [currentUser, setCurrentUser] = useState({
-    name: "",
-    place: "",
-    contact: "",
-    nameError: "",
-    placeError: "",
-    contactError: "",
+    name: '',
+    place: '',
+    contact: '',
+    nameError: '',
+    placeError: '',
+    contactError: '',
   });
   const [users, setUsers] = useContext(usersContext);
   const history = useHistory();
 
-  //==========Functions =========
   const onChangeHandler = (e) => {
     setCurrentUser({ ...currentUser, [e.target.name]: e.target.value });
   };
@@ -30,11 +31,10 @@ function Add() {
     };
     const newUserArray = users.concat(details);
     setUsers(newUserArray);
-    console.log("user object is ===>", users);
   };
 
   const goHome = () => {
-    history.push("/");
+    history.push('/');
   };
 
   const clickHandler = (e) => {
@@ -58,8 +58,8 @@ function Add() {
     }
   };
 
-  const btnText = "<Back";
-  //=============================
+  const btnText = '<Back';
+
   return (
     <>
       <Link to="/">
@@ -98,4 +98,4 @@ function Add() {
   );
 }
 
-export default Add;
+export { Add };

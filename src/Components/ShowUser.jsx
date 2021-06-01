@@ -1,7 +1,8 @@
-import React, { createContext, useContext } from "react";
-import { usersContext } from "../App";
-import { Link } from "react-router-dom";
-import "../Styles/Show.css";
+import React, { createContext, useContext } from 'react';
+import { Link } from 'react-router-dom';
+
+import { usersContext } from '../App';
+import '../Styles/Show.css';
 
 export const editContext = createContext();
 
@@ -10,11 +11,9 @@ function ShowUser() {
 
   function deleteUser(key) {
     const newUserArray = users.filter((user) => user.key !== key);
-    console.log("newUserArray is ", newUserArray);
     setUsers(newUserArray);
   }
   return (
-    // <div className="showUser">
     <div className="showUser">
       <table>
         <thead>
@@ -52,4 +51,4 @@ function ShowUser() {
   );
 }
 
-export default ShowUser;
+export { ShowUser };

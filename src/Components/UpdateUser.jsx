@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
-import { useHistory } from "react-router";
-import { usersContext } from "../App";
-import { validation } from "../Validation";
-import "../Styles/Add.css";
+import React, { useContext, useState } from 'react';
+import { useHistory } from 'react-router';
+
+import { usersContext } from '../App';
+import { validation } from '../Validation';
+import '../Styles/Add.css';
 
 function UpdateUser({ match }) {
-  console.log(match);
   const [users, setUsers] = useContext(usersContext);
   const currentId = match.params.id;
   const currentUserDetails = users.filter(
@@ -13,18 +13,18 @@ function UpdateUser({ match }) {
   )[0];
   const [currentUser, setCurrentUser] = useState({
     ...currentUserDetails,
-    nameError: "",
-    placeError: "",
-    contactError: "",
+    nameError: '',
+    placeError: '',
+    contactError: '',
   });
+
   const history = useHistory();
-  //===========ChangeHandler===========
   const onChangeHandler = (e) =>
     setCurrentUser({
       ...currentUser,
       [e.target.name]: e.target.value,
     });
-  //============Validation============
+
   const clickHandler = (e) => {
     e.preventDefault();
     const { name, contact, place } = validation(currentUser);
@@ -46,9 +46,9 @@ function UpdateUser({ match }) {
       goHome();
     }
   };
-  //===================Add User=================
+
   const goHome = () => {
-    history.push("/");
+    history.push('/');
   };
 
   const addUser = () => {
@@ -65,7 +65,6 @@ function UpdateUser({ match }) {
     setUsers(newUserArray);
   };
 
-  //========================================
   return (
     <form className="form">
       <input
@@ -94,4 +93,4 @@ function UpdateUser({ match }) {
   );
 }
 
-export default UpdateUser;
+export { UpdateUser };
