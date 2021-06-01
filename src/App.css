@@ -1,0 +1,28 @@
+*{
+  margin: 0;
+}
+
+.nav{
+  background: #5d5e88;
+  color: white;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10vh;
+  padding: 0px 40px;
+}
+
+.nav ul{
+  display: flex;
+  position: absolute;
+  right: 10vw;
+  font-size: 1.5em;
+  margin-right: 10vw;
+  padding: 0px 40px;
+}
+li{
+  list-style: none;
+  font-style: normal;
+  cursor: pointer;
+  color: white;
+}
