@@ -90,7 +90,7 @@ function Add() {
           placeholder="Enter Valid Contact Number"
         />
         {currentUser.contactError}
-        <button className="button" onClick={() => clickHandler()}>
+        <button className="button" onClick={clickHandler}>
           Add User To List
         </button>
       </div>
